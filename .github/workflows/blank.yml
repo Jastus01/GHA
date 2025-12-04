@@ -1,0 +1,17 @@
+name: Deploy to Environment
+on:
+ push:
+   branches:
+     - main
+env:
+     API_KEY: ${{ secrets.tenant_id }}
+jobs:
+ deploy:
+   runs-on: ubuntu-latest
+   environment: staging # Specify the environment
+   steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+     - name: Use Environment Secret
+       run:  echo "Deploying with API Key:$API_KEY"
+      
