@@ -3,6 +3,7 @@ on:
  push:
    branches:
      - main
+ workflow_dispatch:
 env:
      API_KEY: ${{ secrets.tenant_id }}
 jobs:
